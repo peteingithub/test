@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Stage 5: Scanning the Image with SUSE Security') { 
       steps {
-        echo "neuvector nameOfVulnerabilityToExemptFour: '',\n"nameOfVulnerabilityToExemptOne: '',\nnameOfVulnerabilityToExemptThree: '',/nnameOfVulnerabilityToExemptTwo: '',\nnameOfVulnerabilityToFailFour: '',\nnameOfVulnerabilityToFailOne: '',\nnameOfVulnerabilityToFailThree: '',\nnameOfVulnerabilityToFailTwo: '',\nnumberOfHighSeverityToFail: '10',\nnumberOfMediumSeverityToFail: '10',\nregistrySelection: 'local_registry',\nrepository: 'app-image',scanLayers: true,tag: '3.5'"
+        echo "neuvector nameOfVulnerabilityToExemptFour: '',\nnameOfVulnerabilityToExemptOne: '',\nnameOfVulnerabilityToExemptThree: '',/nnameOfVulnerabilityToExemptTwo: '',\nnameOfVulnerabilityToFailFour: '',\nnameOfVulnerabilityToFailOne: '',\nnameOfVulnerabilityToFailThree: '',\nnameOfVulnerabilityToFailTwo: '',\nnumberOfHighSeverityToFail: '10',\nnumberOfMediumSeverityToFail: '10',\nregistrySelection: 'local_registry',\nrepository: 'app-image',scanLayers: true,tag: '3.5'"
         //neuvector nameOfVulnerabilityToExemptFour: '',nameOfVulnerabilityToExemptOne: '',nameOfVulnerabilityToExemptThree: '',nameOfVulnerabilityToExemptTwo: '',nameOfVulnerabilityToFailFour: '',nameOfVulnerabilityToFailOne: '',nameOfVulnerabilityToFailThree: '',nameOfVulnerabilityToFailTwo: '',numberOfHighSeverityToFail: '10',numberOfMediumSeverityToFail: '10',registrySelection: 'rmt',repository: "registry.suse.com/bci/bci-base",scanLayers: true,tag: "15.7"
       }
     }
