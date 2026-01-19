@@ -37,7 +37,7 @@ pipeline {
         echo 'numberOfMediumSeverityToFail: '10','
         echo 'registrySelection: 'local_registry','
         echo 'repository: "app-image",scanLayers: true,tag: "3.5"'
-        \\neuvector nameOfVulnerabilityToExemptFour: '',nameOfVulnerabilityToExemptOne: '',nameOfVulnerabilityToExemptThree: '',nameOfVulnerabilityToExemptTwo: '',nameOfVulnerabilityToFailFour: '',nameOfVulnerabilityToFailOne: '',nameOfVulnerabilityToFailThree: '',nameOfVulnerabilityToFailTwo: '',numberOfHighSeverityToFail: '10',numberOfMediumSeverityToFail: '10',registrySelection: 'rmt',repository: "registry.suse.com/bci/bci-base",scanLayers: true,tag: "15.7"
+        //neuvector nameOfVulnerabilityToExemptFour: '',nameOfVulnerabilityToExemptOne: '',nameOfVulnerabilityToExemptThree: '',nameOfVulnerabilityToExemptTwo: '',nameOfVulnerabilityToFailFour: '',nameOfVulnerabilityToFailOne: '',nameOfVulnerabilityToFailThree: '',nameOfVulnerabilityToFailTwo: '',numberOfHighSeverityToFail: '10',numberOfMediumSeverityToFail: '10',registrySelection: 'rmt',repository: "registry.suse.com/bci/bci-base",scanLayers: true,tag: "15.7"
       }
     }
     stage('Stage 6: Deploying the Application to the Develpment Cluster') { 
