@@ -8,8 +8,7 @@ pipeline {
     }
     stage('Stage 2: Build a new Container Image') { 
       steps {
-        echo 'Build command:'
-        echo "dockerapp = docker.build('gabriellins/api-produto:latest', '-f ./src/Dockerfile ./src')"
+        echo "Build command: \ndockerapp = docker.build('gabriellins/api-produto:latest', '-f ./src/Dockerfile ./src')"
       }
     }
     stage('Stage 3: Pushing the Image to the Registry') { 
@@ -24,18 +23,7 @@ pipeline {
     }
     stage('Stage 5: Scanning the Image with SUSE Security') { 
       steps {
-        echo "neuvector nameOfVulnerabilityToExemptFour: '',"
-        echo "nameOfVulnerabilityToExemptOne: '',"
-        echo "nameOfVulnerabilityToExemptThree: '',"
-        echo "nameOfVulnerabilityToExemptTwo: '',"
-        echo "nameOfVulnerabilityToFailFour: '',"
-        echo "nameOfVulnerabilityToFailOne: '',"
-        echo "nameOfVulnerabilityToFailThree: '',"
-        echo "nameOfVulnerabilityToFailTwo: '',"
-        echo "numberOfHighSeverityToFail: '10',"
-        echo "numberOfMediumSeverityToFail: '10',"
-        echo "registrySelection: 'local_registry',"
-        echo "repository: 'app-image',scanLayers: true,tag: '3.5'"
+        echo "neuvector nameOfVulnerabilityToExemptFour: '',\n"nameOfVulnerabilityToExemptOne: '',\nnameOfVulnerabilityToExemptThree: '',/nnameOfVulnerabilityToExemptTwo: '',\nnameOfVulnerabilityToFailFour: '',\nnameOfVulnerabilityToFailOne: '',\nnameOfVulnerabilityToFailThree: '',\nnameOfVulnerabilityToFailTwo: '',\nnumberOfHighSeverityToFail: '10',\nnumberOfMediumSeverityToFail: '10',\nregistrySelection: 'local_registry',\nrepository: 'app-image',scanLayers: true,tag: '3.5'"
         //neuvector nameOfVulnerabilityToExemptFour: '',nameOfVulnerabilityToExemptOne: '',nameOfVulnerabilityToExemptThree: '',nameOfVulnerabilityToExemptTwo: '',nameOfVulnerabilityToFailFour: '',nameOfVulnerabilityToFailOne: '',nameOfVulnerabilityToFailThree: '',nameOfVulnerabilityToFailTwo: '',numberOfHighSeverityToFail: '10',numberOfMediumSeverityToFail: '10',registrySelection: 'rmt',repository: "registry.suse.com/bci/bci-base",scanLayers: true,tag: "15.7"
       }
     }
