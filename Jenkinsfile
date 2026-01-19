@@ -24,7 +24,7 @@ pipeline {
     stage('Stage 5: Scanning the Image with SUSE Security') { 
       steps {
         echo "Stage 5 commands ..."
-        echo 'x'
+        echo "A: ''"
         //echo 'neuvector nameOfVulnerabilityToExemptFour: '','
         //echo 'nameOfVulnerabilityToExemptOne: '','
         //echo 'nameOfVulnerabilityToExemptThree: '','
