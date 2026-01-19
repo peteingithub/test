@@ -1,9 +1,34 @@
 pipeline {
   agent any
   stages {
-    stage('Pre Scan') { 
+    stage('Stage 1: Running the Pre Build Commands') { 
       steps {
-        echo 'Pre Scan commands ...'
+        echo 'Stage 1 commands ...'
+      }
+    }
+    stage('Stage 2: Build a new Container Image') { 
+      steps {
+        echo 'Stage 2 commands ...'
+      }
+    }
+    stage('Stage 3: Pushing the Image to the Registry') { 
+      steps {
+        echo 'Stage 3 commands ...'
+      }
+    }
+    stage('Stage 4: Creating a new App') { 
+      steps {
+        echo 'Stage 4 commands ...'
+      }
+    }
+    stage('Stage 5: Scanning the Image with SUSE Security') { 
+      steps {
+        echo 'Stage 5 commands ...'
+      }
+    }
+    stage('Stage 6: Deploying the Application to the Develpment Cluster') { 
+      steps {
+        echo 'Stage 6 commands ...'
       }
     }
   }
