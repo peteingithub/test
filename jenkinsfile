@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    stages {
+        stage ('Stage Build the app …') {
+            steps {
+                script {
+                }                
+            }
+        }
+
+        stage ('Push the app to a registry …') {
+            steps {
+                script {
+                    //docker.withRegistry('https:172.30.5.2:5000', '') {
+                    //    dockerapp.push('latest')
+                    }
+                }
+            }
+        }
+
+        stage ('SUSE Security scan …') {
+            steps {
+                script {      
+                    neuvector nameOfVulnerabilityToExemptFour: '', nameOfVulnerabilityToExemptOne: '', nameOfVulnerabilityToExemptThree: '', nameOfVulnerabilityToExemptTwo: '', nameOfVulnerabilityToFailFour: '', nameOfVulnerabilityToFailOne: '', nameOfVulnerabilityToFailThree: '', nameOfVulnerabilityToFailTwo: '', numberOfHighSeverityToFail: '1', numberOfMediumSeverityToFail: '', registrySelection: 'http://172.30.5.2:5000', repository: '*.*', scanLayers: true, scanTimeout: 10, tag: 'latest'                    
+                }
+            }
+        }
+
+
+        stage ('Deploy the app …') {
+            environment {
+                tag_version = "latest"
+            }
+            steps {
+                //withKubeConfig([credentialsId: 'kubeconfig-geeko-cluster']) {
+                //    sh 'sed -i "s/{{tag}}/$tag_version/g" ./k8s/deployment.yaml'
+                  //  sh 'kubectl apply -f ./k8s/deployment.yaml -n ci-cd' 
+                }
+            }
+        }
+    }
+}
