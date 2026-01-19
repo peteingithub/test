@@ -3,27 +3,27 @@ pipeline {
   stages {
     stage('Stage 1: Running the Pre Build Commands') { 
       steps {
-        echo 'Stage 1 commands ...'
+        echo 'E.g. clean up the build system prior to a new build.'
       }
     }
     stage('Stage 2: Build a new Container Image') { 
       steps {
-        echo 'Stage 2 commands ...'
+        echo 'Build command:'
+        echo "dockerapp = docker.build('gabriellins/api-produto:latest', '-f ./src/Dockerfile ./src')"
       }
     }
     stage('Stage 3: Pushing the Image to the Registry') { 
       steps {
-        echo 'Stage 3 commands ...'
+        echo "dockerapp.push('latest')"
       }
     }
-    stage('Stage 4: Creating a new App') { 
+    stage('Stage 4: Configuring the new App') { 
       steps {
-        echo 'Stage 4 commands ...'
+        echo 'Additional commands to update the application configuration ...'
       }
     }
     stage('Stage 5: Scanning the Image with SUSE Security') { 
       steps {
-        echo "Stage 5 commands ..."
         echo "neuvector nameOfVulnerabilityToExemptFour: '',"
         echo "nameOfVulnerabilityToExemptOne: '',"
         echo "nameOfVulnerabilityToExemptThree: '',"
@@ -41,7 +41,7 @@ pipeline {
     }
     stage('Stage 6: Deploying the Application to the Develpment Cluster') { 
       steps {
-        echo 'Stage 6 commands ...'
+        echo 'kubectl -f new-app-deployment.yaml'
       }
     }
   }
